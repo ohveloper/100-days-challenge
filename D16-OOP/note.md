@@ -14,3 +14,17 @@
 
 - 청사진을 가지고 있는 클래스
 - 청사진을 통해 만들어내는 오브젝트
+
+### 파이썬 패키지
+
+- pypi
+
+### OOP를 가장 잘 설명한 사람 > 스티브잡스
+
+- 일본여행, 긴 비행, 착륙, 장관, 후지산, 벚꽃
+- 토마토쥬스, 옷에 쏟음
+- 환전도 불가, 일본어 못함, 세탁소 못찾음
+- 호텔에 가서 영어 할줄 아는 사람에게 부탁하면 끝
+- Hotel, hotel.dry_clean()
+- Hotel 클래스와 함께라면 아무것도 신경쓸 필요 없음
+- 스티브잡스 인터뷰 : https://www.rollingstone.com/culture/culture-news/steve-jobs-in-1994-the-rolling-stone-interview-231132/
