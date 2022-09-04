@@ -34,33 +34,41 @@ money = 0
 
 
 # TODO: 4. Check resources sufficient?
+# TODO: for loop으로 바꿔보자
 def check_resources(order, resources):
-    if order != "espresso":
-        need_water = MENU[order]["ingredients"]["water"]
-        need_coffee = MENU[order]["ingredients"]["coffee"]
-        need_milk = MENU[order]["ingredients"]["milk"]
+    for item in MENU[order]["ingredients"]:
+        # print(item)
+        if MENU[order]["ingredients"][item] > resources[item]:
+            print(f"Sorry there is not enough {item}")
+            return False
+    return True
 
-        if need_water > resources["water"]:
-            print(f"Sorry there is not enough water.")
-            return False
-        if need_milk > resources["milk"]:
-            print(f"Sorry there is not enough milk.")
-            return False
-        if need_coffee > resources["coffee"]:
-            print(f"Sorry there is not enough coffee.")
-            return False
-        return True
-    else:
-        need_water = MENU[order]["ingredients"]["water"]
-        need_coffee = MENU[order]["ingredients"]["coffee"]
+    # if order != "espresso":
+    #     need_water = MENU[order]["ingredients"]["water"]
+    #     need_coffee = MENU[order]["ingredients"]["coffee"]
+    #     need_milk = MENU[order]["ingredients"]["milk"]
 
-        if need_water > resources["water"]:
-            print(f"Sorry there is not enough water.")
-            return False
-        if need_coffee > resources["coffee"]:
-            print(f"Sorry there is not enough coffee.")
-            return False
-        return True
+    #     if need_water > resources["water"]:
+    #         print(f"Sorry there is not enough water.")
+    #         return False
+    #     if need_milk > resources["milk"]:
+    #         print(f"Sorry there is not enough milk.")
+    #         return False
+    #     if need_coffee > resources["coffee"]:
+    #         print(f"Sorry there is not enough coffee.")
+    #         return False
+    #     return True
+    # else:
+    #     need_water = MENU[order]["ingredients"]["water"]
+    #     need_coffee = MENU[order]["ingredients"]["coffee"]
+
+    #     if need_water > resources["water"]:
+    #         print(f"Sorry there is not enough water.")
+    #         return False
+    #     if need_coffee > resources["coffee"]:
+    #         print(f"Sorry there is not enough coffee.")
+    #         return False
+    #     return True
 
 # TODO: 5. Process coins.
 def process_coins(order):
@@ -80,14 +88,17 @@ def process_coins(order):
         return result - change
 
 # TODO: 7. Make Coffee.
+# TODO: for loop 으로 바꿔보자
 def make_coffee(order):
-    if order != "espresso":
-        resources["water"] = resources["water"] - MENU[order]["ingredients"]["water"]
-        resources["milk"] = resources["milk"] - MENU[order]["ingredients"]["milk"]
-        resources["coffee"] = resources["coffee"] - MENU[order]["ingredients"]["coffee"]
-    else:
-        resources["water"] = resources["water"] - MENU[order]["ingredients"]["water"]
-        resources["coffee"] = resources["coffee"] - MENU[order]["ingredients"]["coffee"]
+    for item in MENU[order]["ingredients"]:
+        resources[item] -= MENU[order]["ingredients"][item]
+    # if order != "espresso":
+    #     resources["water"] = resources["water"] - MENU[order]["ingredients"]["water"]
+    #     resources["milk"] = resources["milk"] - MENU[order]["ingredients"]["milk"]
+    #     resources["coffee"] = resources["coffee"] - MENU[order]["ingredients"]["coffee"]
+    # else:
+    #     resources["water"] = resources["water"] - MENU[order]["ingredients"]["water"]
+    #     resources["coffee"] = resources["coffee"] - MENU[order]["ingredients"]["coffee"]
 
     # print(order)
 
