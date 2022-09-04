@@ -16,22 +16,13 @@ while is_on:
     is_on = False
   
   elif order == "report":
-    # TODO: print 수정
     coffee_maker.report()
     money_machine.report()
-    # print("hello")
 
   else:
-    # TODO: 이 아래로 전부 수정 정리 하기
+    drink = coffee_menu.find_drink(order)
+    is_okay_resource = coffee_maker.is_resource_sufficient(drink)
+    is_okay_payment = money_machine.make_payment(drink.cost)
 
-    if coffee_maker.is_resource_sufficient(coffee_menu.find_drink(order)):
-      if money_machine.make_payment(coffee_menu.find_drink(order).cost):
-        coffee_maker.make_coffee(coffee_menu.find_drink(order))
-
-
-
-
-
-
-# print(coffee_menu.find_drink("latte").name)
-# print()
+    if is_okay_resource and is_okay_payment:
+        coffee_maker.make_coffee(drink)
