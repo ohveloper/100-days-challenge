@@ -17,21 +17,17 @@ while is_on:
   
   elif order == "report":
     # TODO: print 수정
-    print(coffee_maker.report())
-    print(money_machine.report())
+    coffee_maker.report()
+    money_machine.report()
     # print("hello")
 
   else:
     # TODO: 이 아래로 전부 수정 정리 하기
-    # print("world")
-    # print(coffee_menu.find_drink(order).ingredients)
-    if CoffeeMaker().is_resource_sufficient(coffee_menu.find_drink(order)):
-      # print("hello")
-      if MoneyMachine().make_payment(Menu().find_drink(order).cost):
-        CoffeeMaker().make_coffee(coffee_menu.find_drink(order))
 
+    if coffee_maker.is_resource_sufficient(coffee_menu.find_drink(order)):
+      if money_machine.make_payment(coffee_menu.find_drink(order).cost):
+        coffee_maker.make_coffee(coffee_menu.find_drink(order))
 
-      # CoffeeMaker().make_coffee(order)
 
 
 
