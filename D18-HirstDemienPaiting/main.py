@@ -22,18 +22,24 @@ turtle.penup()
 turtle.speed("fastest")
 
 
+# 몇칸을 그릴지 작성하는 함수
 def color_dot(how_many):
     for j in range(how_many):
+        # 50보 옆으로 움직여서
         turtle.fd(50)
+        # 닷 찍기
         turtle.dot(20, r.choice(color_list))
 
-
+# 몇줄을 그릴지 작동하는 함수
 def hirst_painting(how_many):
     change = -50
     start = -250
     for i in range(how_many):
+        # 시작하는 지점을 매 행마다 변경
         turtle.setposition(-250, start)
+        # 행에 n개의 점을 찍는 함수를 불러온다
         color_dot(how_many)
+        # y축을 위로 올려준다
         start -= change
 
 
