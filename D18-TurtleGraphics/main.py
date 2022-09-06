@@ -73,14 +73,16 @@ tim.color("purple1")
 #     green = r.randint(0, 255)
 #     blue = r.randint(0, 255)
 #     return (red, green, blue)
+# #
+# def random_work(how_many_work):
+#     turn = [0, 90, 180, 270]
+#     for _ in range(how_many_work):
+#         pen_color = random_color()
+#         tim.pencolor(pen_color)
+#         tim.fd(20)
+#         tim.setheading(r.choice(turn))
 #
-# turn = [0, 90, 180, 270]
-# for _ in range(200):
-#     pen_color = random_color()
-#     tim.pencolor(pen_color)
-#     tim.fd(20)
-#     tim.setheading(r.choice(turn))
-
+# random_work(400)
 
 # challenge 6 : Make a Spirograph
 
@@ -91,13 +93,16 @@ def random_color():
     blue = r.randint(0, 255)
     return (red, green, blue)
 
-t.speed(0)
-t.pensize(1)
+tim.speed("fastest")
+tim.pensize(1)
 
-for i in range(0, 360, 5):
-    t.pencolor(random_color())
-    t.circle(120, 360)
-    t.setheading(i)
+def draw_spirograph(gap):
+    for i in range(0, 360, gap):
+        tim.pencolor(random_color())
+        tim.circle(120, 360)
+        tim.setheading(i)
+
+draw_spirograph(3)
 
 
 
