@@ -13,3 +13,13 @@
   - 예)
     - onkey(key="space", fun=move_forwards)
 - 각각의 상황에 맞는 방식을 사용하자
+
+### (의문) 객체와 인스턴스는 어떻게 다른가???
+
+```
+            (object) (Class)
+- (instance) timmy = Turtle()
+- (instance) tommy = Turtle()
+```
+- timmy와 tommy는 모두 Turtle의 객체 이지만, 서로 다른 인스턴스 입니다.
+- 그리하여, 두 객체는 독립적으로 동작하며 다른 상태를 갖습니다.
