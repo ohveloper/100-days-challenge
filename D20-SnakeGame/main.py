@@ -23,14 +23,8 @@ while is_game_on:
     screen.update()
     # 잠시 멈췄다가 다시 진행 시키는 함수
     time.sleep(0.1)
-
+    # 스네이크 움직여!
     snake.move()
-
-
-
-
-
-
 
 
 
