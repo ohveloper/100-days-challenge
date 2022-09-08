@@ -102,7 +102,7 @@ def draw_spirograph(gap):
         tim.circle(120, 360)
         tim.setheading(i)
 
-draw_spirograph(3)
+draw_spirograph(10)
 
 
 
