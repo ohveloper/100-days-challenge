@@ -28,17 +28,16 @@ while game_is_on:
     car_manager.move_car()
 
 
-    if player.ycor() > 280:
+    if player.is_at_finish_line():
         scoreboard.add_score()
         player.reset_player()
-        time_speed *= 0.7
+        car_manager.level_up()
 
     for car in car_manager.cars:
         # car보다 아래 있을때
-        if player.ycor() < car.ycor():
-            if player.distance(car) < 35 and car.xcor() > player.xcor():
-                game_is_on = False
-                scoreboard.game_over()
+        if car.distance(player) < 20:
+            game_is_on = False
+            scoreboard.game_over()
 
 
 screen.exitonclick()

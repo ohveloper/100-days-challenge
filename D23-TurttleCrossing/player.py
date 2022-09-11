@@ -11,15 +11,16 @@ class Player(Turtle):
         self.shape("turtle")
         self.setheading(90)
         self.penup()
-        self.goto(STARTING_POSITION)
+        self.reset_player()
 
     def move(self):
-        # x = self.xcor()
-        # y = self.ycor() + MOVE_DISTANCE
-        # self.goto(x, y)
         self.fd(MOVE_DISTANCE)
 
     def reset_player(self):
         self.goto(STARTING_POSITION)
 
-
+    def is_at_finish_line(self):
+        if self.ycor() > FINISH_LINE_Y:
+            return True
+        else:
+            return False
