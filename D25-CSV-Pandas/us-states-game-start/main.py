@@ -19,13 +19,13 @@ print(state_list)
 
 flag = True
 text_input = "Guess the State"
-while flag:
+while len(an_answer.answer_list) < 50:
     screen.update()
     time.sleep(0.1)
-    answer_state = screen.textinput(title=text_input, prompt="What's another state' name?")
-    if (answer_state.capitalize() in state_list):
-        x = int(data[data.state == answer_state.capitalize()].x)
-        y = int(data[data.state == answer_state.capitalize()].y)
+    answer_state = screen.textinput(title=text_input, prompt="What's another state' name?").title()
+    if (answer_state in state_list):
+        x = int(data[data.state == answer_state].x)
+        y = int(data[data.state == answer_state].y)
         an_answer.add_answer(answer_state, x, y)
         text_input = f"{len(an_answer.answer_list)}/50 Guess the State"
 
