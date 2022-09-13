@@ -17,7 +17,12 @@ class Snake:
         for position in STARTING_POSITION:
             self.add_snake(position)
 
-
+    def reset(self):
+        for seg in self.segments:
+            seg.goto(1000, 1000)
+        self.segments.clear()
+        self.make_snake()
+        self.head = self.segments[0]
     def add_snake(self, position):
             new_segment = Turtle("square")
             new_segment.penup()

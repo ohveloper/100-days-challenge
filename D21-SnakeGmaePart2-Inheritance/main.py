@@ -42,8 +42,8 @@ while is_game_on:
     # Detect collision with wall.
     if snake.head.xcor() > 280 or snake.head.xcor() < -280 or snake.head.ycor() > 280 or snake.head.ycor() < -280:
         print("hello")
-        is_game_on = False
-        score.game_over()
+        score.reset()
+        snake.reset()
 
     # Detect collision with tail.
     # slicing 을 활용해 1번 idx segment 부터 반복하며 검사
@@ -51,6 +51,7 @@ while is_game_on:
         if snake.head.distance(segment) < 10:
             is_game_on = False
             score.game_over()
+            snake.reset()
 
 
 
