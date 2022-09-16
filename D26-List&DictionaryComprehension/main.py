@@ -37,3 +37,29 @@ check_list = [{"name":"jack", "check": 1}, {"name":"holland", "check": 0}]
 test_list = [i["name"] for i in check_list if i["check"] == 1]
 print(test_list)
 
+# test 3
+with open("file1.txt") as f1:
+    f1_data = f1.readlines()
+
+with open("file2.txt") as f2:
+    f2_data = f2.readlines()
+    print(f2_data)
+
+result = [int(num) for num in f1_data if num in f2_data]
+print(result)
+
+
+# Dictionary Comprehension
+# sample
+# new_dict = {new_key:new_value for item in list}
+# new_dict = {new_key:new_value for (key, value) in dict.items()}
+# new_dict = {new_key:new_value for (key, value) in dict.items() if test}
+
+# test4
+students_name = ["hello", "world", "computer", "water", "pen"]
+import random
+students_scores = {student: random.randint(1,101) for student in students_name}
+print(students_scores)
+
+passed_students = {key:value for (key, value) in students_scores.items() if value > 60}
+print(passed_students)
