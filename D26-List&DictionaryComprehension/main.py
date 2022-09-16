@@ -63,3 +63,5 @@ print(students_scores)
 
 passed_students = {key:value for (key, value) in students_scores.items() if value > 60}
 print(passed_students)
+
+test2 = []
